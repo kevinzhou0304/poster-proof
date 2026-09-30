@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "poster-proof"
+version = "0.1.0"
+description = "Offline delivery checks for promotional images and QR readability"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "kevinzhou0304"}]
+dependencies = [
+  "Pillow>=10,<13",
+  "numpy>=1.24,<3",
+  "opencv-python-headless>=4.9,<6",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "qrcode>=8,<9"]
+
+[project.scripts]
+poster-proof = "poster_proof.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
