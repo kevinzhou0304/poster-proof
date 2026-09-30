@@ -41,6 +41,16 @@ def test_good_poster_passes_and_qr_decodes_at_preview_sizes(tmp_path: Path) -> N
     assert "https://example.org/event" not in str(report)
 
 
+def test_report_records_filename_without_local_directory(tmp_path: Path) -> None:
+    path = tmp_path / "poster.png"
+    make_poster(path)
+
+    report = audit_image(path, AuditOptions())
+
+    assert report["path"] == path.name
+    assert str(tmp_path) not in str(report)
+
+
 def test_dimension_and_color_failures_are_reported(tmp_path: Path) -> None:
     path = tmp_path / "small-gray.png"
     Image.new("L", (400, 600), "white").save(path)

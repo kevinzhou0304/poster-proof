@@ -37,7 +37,7 @@ Confirm a particular QR destination without including its text in the output:
 poster-proof poster.png --expect-qr "https://example.org/event" --json report.json
 ```
 
-The command exits with `0` when all requested checks pass, `1` when a check fails, and `2` when an image or option cannot be read. The JSON report records whether the expected QR text matched, but does not record the decoded text or the expected value. Preview widths at or above the source width are omitted because they are not reductions.
+The command exits with `0` when all requested checks pass, `1` when a check fails, and `2` when an image or option cannot be read. The JSON report records only the image filename, not its full local path. It records whether the expected QR text matched, but does not record the decoded text or the expected value. Preview widths at or above the source width are omitted because they are not reductions.
 
 ## 中文说明
 
@@ -47,7 +47,7 @@ Poster Proof 是离线宣传图片交付检查工具。它核对像素尺寸、�
 poster-proof 海报.png --min-width 1080 --min-height 1920 --require-rgb --require-qr --preview-width 720 --json 检查结果.json
 ```
 
-`--expect-qr` 可以检查二维码内容是否与指定网址相符；检查报告不会保存二维码原文。二维码通过软件解码，仍应在最终投放设备上实测扫码。印刷品还需根据实际设备和材料打样。
+`--expect-qr` 可以检查二维码内容是否与指定网址相符；检查报告只记录图片文件名，不记录完整本机路径，也不会保存二维码原文。二维码通过软件解码，仍应在最终投放设备上实测扫码。印刷品还需根据实际设备和材料打样。
 
 ## Scope and limitations
 

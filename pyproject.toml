@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "poster-proof"
-version = "0.1.0"
+version = "0.1.1"
 description = "Offline delivery checks for promotional images and QR readability"
 readme = "README.md"
 requires-python = ">=3.10"

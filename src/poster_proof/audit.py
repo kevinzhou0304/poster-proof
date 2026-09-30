@@ -106,7 +106,7 @@ def audit_image(path: Path, options: AuditOptions) -> dict:
             )
 
     return {
-        "path": str(path.resolve()),
+        "path": path.name,
         "passed": all(item["passed"] for item in checks),
         "image": {
             "format": image_format,
